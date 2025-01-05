@@ -1,6 +1,5 @@
 // Count occurrences of a number in a sorted array with duplicates
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
