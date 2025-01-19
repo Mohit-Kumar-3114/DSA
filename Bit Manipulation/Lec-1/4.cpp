@@ -33,7 +33,7 @@ int ClearBit2(int n,int i){
 
 
 int main(){
-    int n=15;
+    int n=115;
     int i=2;
     string ans=ClearBit(n,i);
     cout<<ans;

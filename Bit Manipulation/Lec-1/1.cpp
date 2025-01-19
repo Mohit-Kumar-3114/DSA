@@ -38,7 +38,7 @@ int binaryToDecimal(string s){
 
 
 int main(){
-    int n=15;
+    int n=115;
     string ans=decimalToBinary(n);
     cout<<ans<<endl;
     string s="1111";
