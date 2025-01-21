@@ -7,7 +7,7 @@ using namespace std;
 
 
 // Optimal O(2n) and O(2n)
-void reverseString(string &str) { // hello world
+void reverseString(string &str) { 
     int start = 0;
     int end = str.length() - 1;
     while (start < end) {
@@ -23,11 +23,11 @@ string reverseWords(string str) {
             continue;  
         } else if (str[i] == ' ') {
             reverseString(temp); 
-                ans += temp; //world  
+                ans += temp; 
                 ans += ' ';
                 temp = "";            
         } else {
-            temp += str[i]; //olleh
+            temp += str[i]; 
         }
     }
 
