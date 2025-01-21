@@ -7,27 +7,27 @@ using namespace std;
 
 
 // Optimal O(2n) and O(2n)
-void reverseString(string &str) {
+void reverseString(string &str) { // hello world
     int start = 0;
     int end = str.length() - 1;
     while (start < end) {
-        swap(str[start++], str[end--]);
+        swap(str[start++], str[end--]); 
     }
 }
 
 string reverseWords(string str) {
-    string ans = "";
-    string temp = "";
+    string ans = ""; 
+    string temp = ""; 
     for (int i = str.length() - 1; i >= 0; i--) {
         if (str[i] == ' ' && temp.empty()) {
             continue;  
         } else if (str[i] == ' ') {
             reverseString(temp); 
-                ans += temp;
+                ans += temp; //world  
                 ans += ' ';
                 temp = "";            
         } else {
-            temp += str[i];
+            temp += str[i]; //olleh
         }
     }
 
@@ -46,7 +46,7 @@ string reverseWords(string str) {
 
 
 int main() {
-    string input = "  hello world  ";
+    string input = "hello world  ";
     string result = reverseWords(input);
     cout << "Input: \"" << input << "\"" << endl;
     cout << "Output: \"" << result << "\"" << endl;
