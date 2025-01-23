@@ -7,7 +7,7 @@ using namespace std;
 
 
 // Optimal O(n * m) and O(n)
-string longestCommonPrefix(vector<string>& strs) {
+string longestCommonPrefix(vector<string>& strs) { 
     string ans = "";
     for (int i = 0; i < strs[0].size(); i++) {  
         for (auto s : strs) {  
