@@ -15,7 +15,7 @@ vector<vector<int>> PowerSet(int a[], int n){
     for(int i=0;i<n;i++){
     if((num & (1<<i)) != 0) list.push_back(a[i]); // check the ith bit is set or not
     }
-    ans.push_back(list);
+    ans.push_back(list); 
     }
     return ans;
 }
