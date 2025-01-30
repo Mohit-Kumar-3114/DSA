@@ -22,7 +22,7 @@ int FindNum(vector<int>&arr){
 
 // Better O(n * 32) and O(1)
 int FindNum2(vector<int>arr){
-    // Optimal for it number are repeating k times instead of 3
+    // Optimal for if number are repeating k times instead of 3
     int n=arr.size();
     int ans=0;
     for(int i=0;i<32;i++){
@@ -38,7 +38,7 @@ int FindNum2(vector<int>arr){
 
 
 
-// Better O(n log n + n/3) and O(log n)
+// Optimal O(n log n + n/3) and O(log n)
 int FindNum3(vector<int>arr){
     // Better than previous approach as n has to be 2^32 so that TC = O(n * 32) which is not always possible 
     sort(arr.begin(),arr.end());
@@ -52,29 +52,13 @@ int FindNum3(vector<int>arr){
 
 
 
-// Optimal O(n) and O(1)
-int FindNum4(vector<int>arr){
-    int ones=0;
-    int twos=0;
-    for(int i=0;i<arr.size();i++){
-        ones=(ones^arr[i]) & (~twos);  
-        twos=(twos^arr[i]) & (~ones);
-    }
-    return ones;
-}
-
-
-
-
 int main(){
     vector<int>arr={4,5,4,5,2,5,4};
     int ans=FindNum(arr);
     int ans2=FindNum2(arr);
     int ans3=FindNum3(arr);
-    int ans4=FindNum4(arr);
     cout<<ans<<endl;
     cout<<ans2<<endl;
     cout<<ans3<<endl;
-    cout<<ans4<<endl;
     return 0;
 }
