@@ -14,8 +14,8 @@ int Divide(int dividend,int divisor){
     bool flag=true;
     if(dividend<0 and divisor>0) flag=false;
     if(dividend>=0 and divisor<0) flag=false;
-    long long  n=abs(dividend); // if dividend is 2^-31 then abs = 2^31 which is overflow for int, so use long
-    long long  d=abs(divisor); // if divisor is 2^-31 then abs = 2^31 which is overflow for int, so use long
+    long long  n=abs((long long )dividend); // if dividend is 2^-31 then abs = 2^31 which is overflow for int, so use long
+    long long  d=abs((long long )divisor); // if divisor is 2^-31 then abs = 2^31 which is overflow for int, so use long
     long long ans=0;
     long long sum=0;
     while(sum+d<=n){
@@ -37,8 +37,8 @@ int Divide2(int dividend,int divisor){
     bool flag=true;
     if(dividend<0 and divisor>0) flag=false;
     if(dividend>=0 and divisor<0) flag=false;
-    long long  n=abs(dividend); // if dividend is 2^-31 then abs = 2^31 which is overflow for int, so use long
-    long long  d=abs(divisor); // if divisor is 2^-31 then abs = 2^31 which is overflow for int, so use long
+    long long  n=abs((long long )dividend); // if dividend is 2^-31 then abs = 2^31 which is overflow for int, so use long
+    long long  d=abs((long long )divisor); // if divisor is 2^-31 then abs = 2^31 which is overflow for int, so use long
     long long ans=0;
     while(n>=d){
         int count=0;
