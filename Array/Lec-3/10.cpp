@@ -20,7 +20,7 @@ int numberOfInversions(vector<int>&a, int n) {
 
 
 
-// Optimal O(n log n) and O(n)
+// Optimal O(n log n) and O(n + log n)
 int merge(vector<int> &arr, int low, int mid, int high) {
     vector<int> temp; 
     int left = low;      

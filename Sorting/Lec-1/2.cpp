@@ -1,4 +1,4 @@
-// Bubble sort 
+// Bubble sort (stable)
 
 #include <bits/stdc++.h>
 using namespace std;

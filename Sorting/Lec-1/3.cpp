@@ -1,4 +1,4 @@
-// Insertion sort 
+// Insertion sort (stable)
 
 #include <bits/stdc++.h>
 using namespace std;

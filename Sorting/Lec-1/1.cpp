@@ -1,4 +1,4 @@
-// Selection sort 
+// Selection sort (unstable)
 
 #include <bits/stdc++.h>
 using namespace std;
