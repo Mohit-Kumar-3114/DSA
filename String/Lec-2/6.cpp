@@ -7,9 +7,7 @@ using namespace std;
 
 
 // Optimal O(n^3) and O(1)
-bool check_palindrome(string &temp) {
-    int low = 0;
-    int high = temp.size() - 1;
+bool check_palindrome(string &temp, int low,int high) {
     while (low <= high) {
         if (temp[low++] != temp[high--]) return false;
     }
@@ -18,29 +16,27 @@ bool check_palindrome(string &temp) {
 
 string longestPalindrome(string s) {
     int maxi = INT_MIN;
-    string ans = "";
+    int start=-1;
+    int end=-1;
     for (int i = 0; i < s.length(); i++) {
-        string temp = "";
         for (int j = i; j < s.length(); j++) {
-            temp += s[j];
-            if (check_palindrome(temp)) {
+            if (check_palindrome(s,i,j)) {
                 if (j - i + 1 > maxi) {
-                    ans = temp;
+                    start=i;
+                    end=j;
                     maxi = j - i + 1;
                 }
             }
         }
     }
-    return ans;
+    return s.substr(start,maxi);
 }
 
 
 
 
 int main() {
-    string s;
-    cout << "Enter the string: ";
-    cin >> s;
+    string s="aabbaac";
     string result = longestPalindrome(s);
     cout << "The longest palindromic substring is: " << result << endl;
     return 0;
