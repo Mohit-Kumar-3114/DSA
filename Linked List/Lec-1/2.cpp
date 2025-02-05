@@ -47,7 +47,7 @@ int lengthofLL(Node* head) {
     Node* temp = head;
     
     while (temp) {
-        cout << temp->data << " -> "; // Printing elements
+        cout << temp->data << " -> "; 
         temp = temp->next;
         cnt++;
     }
