@@ -29,7 +29,7 @@ towerOfHanoi(helper,target,source,n-1,steps);
 int main (){
     int n=3;
     int steps=0;
-    towerOfHanoi(1,2,3,n,steps);
+    towerOfHanoi(1,3,2,n,steps);
     cout << "Number of steps : " << steps<<endl;
     return 0;
 }
