@@ -35,9 +35,10 @@ void printList(Node* head) {
 
 
 // Optimal O(n) and O(1)
-Node* middle2(Node* head) {
+Node* middle(Node* head) {
+    if (!head || !head->next) return head;
     Node* slow = head;
-    Node* fast = head;
+    Node* fast = head->next->next;
     while (fast && fast->next) {
         slow = slow->next;
         fast = fast->next->next;
@@ -46,17 +47,12 @@ Node* middle2(Node* head) {
 }
 
 Node* deleteMiddle(Node* head) {
-    Node* mid = middle2(head);
-    if (head == mid) return nullptr;
-    
-    Node* temp = head;
-    while (temp->next != mid) { 
-        temp = temp->next;
-    }
-    
-    temp->next = mid->next;
-    delete mid;
-    return head;
+    if (!head || !head->next) return nullptr;
+        Node* prevMid = middle(head);
+        Node* toDelete = prevMid->next;
+        prevMid->next = prevMid->next->next;
+        delete toDelete;
+        return head;
 }
 
 
@@ -68,6 +64,7 @@ int main() {
     head->next->next = new Node(3);
     head->next->next->next = new Node(4);
     head->next->next->next->next = new Node(5);
+    head->next->next->next->next->next = new Node(6);
     cout << "Original List: ";
     printList(head);
     head=deleteMiddle(head);
