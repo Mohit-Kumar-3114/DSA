@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// 2 3 5 7 11 13 17 19 23 29 31
+
 
 
 // Brute O((sqrt(n))/2 * n/2) and O(no. of prime)
