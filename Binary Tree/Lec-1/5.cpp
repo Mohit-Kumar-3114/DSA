@@ -16,7 +16,7 @@ struct Node {
 
 
 
-// Optimal O(n)
+// Optimal O(n) and O(n)
 vector<vector<int>> preInPostTraversal(Node* root) {
     vector<int> pre, in, post;
     if (root == NULL) {
