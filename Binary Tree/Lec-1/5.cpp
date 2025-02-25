@@ -18,18 +18,12 @@ struct Node {
 
 // Optimal O(n)
 vector<vector<int>> preInPostTraversal(Node* root) {
-
     vector<int> pre, in, post;
     if (root == NULL) {
         return {};
     }
-
     stack<pair<Node*, int>> st;
-
-    // Start with the root node
-    // and state 1 (preorder)
     st.push({root, 1});
-
     while (!st.empty()) {
         auto it = st.top();
         st.pop();
