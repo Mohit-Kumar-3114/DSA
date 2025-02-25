@@ -20,7 +20,7 @@ bool prime(int num){
 
 vector<int>fn(int num){
     vector<int>ans;
-    for(int i=2;i<=sqrt(num);i++){
+    for(int i=1;i<=sqrt(num);i++){
         if(num%i==0){
         if(prime(i)) ans.push_back(i);
         if(prime(num/i)){
@@ -34,15 +34,16 @@ vector<int>fn(int num){
 
 
 
-// Better O(log n * sqrt(n)) and O(no. of prime factors)
+// Optimal O(log n * sqrt(n)) and O(no. of prime factors)
 vector<int>fn2(int num){
   vector<int>ans;
-  for(int i=2;i<=sqrt(num);i++){
+  for(int i=2;i<=sqrt(num);i++){ 
   if(num%i==0){
   ans.push_back(i);
   while(num%i==0)num=num/i;
   }
   }
+  if(num!=1) ans.push_back(num);
   return ans;
 }
 
