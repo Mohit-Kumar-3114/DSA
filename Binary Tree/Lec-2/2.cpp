@@ -16,26 +16,6 @@ struct Node {
 
 
 
-// Brute O(n^2) and O(h)
-int height(Node* root){
-    if(!root) return 0;
-    return max(height(root->left),height(root->right))+1;
-}
-
-bool check_balanced(Node* root){
-    if(!root) return true;
-    int left=height(root->left);
-    int right=height(root->right);
-    if(abs(left-right)>1) return false;
-    bool l=check_balanced(root->left);
-    bool r=check_balanced(root->right);
-    if(!left or !right) return false;
-    return true;
-}
-
-
-
-
 // Optimal O(n) and O(h)
 int checkHeight(Node* root) {
     if (!root) return 0;
@@ -47,7 +27,7 @@ int checkHeight(Node* root) {
     return 1 + max(left, right);
 }
 
-bool check_balanced2(Node* root) {
+bool check_balanced(Node* root) {
     return checkHeight(root) != -1;
 }
 
@@ -63,7 +43,5 @@ int main(){
     root->left->right->left = new Node(5);
     if(check_balanced(root))cout<<"Tree is balanced";
     else cout<< "Tree is not balanced";
-    if(check_balanced2(root))cout<<"\nTree is balanced";
-    else cout<< "\nTree is not balanced";
     return 0;
 }
