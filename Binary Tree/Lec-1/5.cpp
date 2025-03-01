@@ -1,4 +1,4 @@
-// preorder, inorder and postorder in single traversal
+// Preorder, inorder and postorder in single traversal
                             
 #include <bits/stdc++.h>
 using namespace std;
