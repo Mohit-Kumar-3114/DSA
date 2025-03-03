@@ -26,7 +26,7 @@ bool checkSetBit(int n,int i){
 
 // Optimal O(1) and O(1)
 bool checkSetBit2(int n,int i){
-    if((n & (1<<i)) != 0) return true; //  if(((n >> i) & 1) != 0) return true
+    if((n & (1<<i)) != 0) return true; // if(((n >> i) & 1) != 0) return true
     return false; 
 }
 
