@@ -48,6 +48,6 @@ int main() {
     root->left->right->left = new Node(7);
     root->left->right->right = new Node(4);
     int targetLeafValue = 7;
-    cout<<"LCA is: "<<lowestCommonAncestor(root,1,4);
+    cout<<"LCA is: "<<lowestCommonAncestor(root,6,4)->val;
     return 0;
 }
