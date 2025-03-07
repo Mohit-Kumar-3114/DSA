@@ -15,6 +15,7 @@ struct Node {
 
 
 
+
 // Optimal O(n) and O(h)
 void mirror(Node* root) {
     if (!root) return;
