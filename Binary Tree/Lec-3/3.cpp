@@ -22,37 +22,36 @@ int widthOfBinaryTree(Node* root) {
         return 0;
     }
     long long ans = 0;
-    queue<pair<Node*, long long>> q;
-    q.push({root, 0});
+    queue<pair<Node*, long long>> q; 
+    q.push({root, 0}); 
     while (!q.empty()) {
-        int size = q.size();
-        long long  first,last=0;
+        int size = q.size(); 
+        long long  first,last=0; 
         long long mini = q.front().second;
         for (int i = 0; i < size; i++) {
             long long  pos = q.front().second-mini;
-            Node* node = q.front().first;
+            Node* node = q.front().first; 
             q.pop();
             if (i == 0) {
-                first = pos;
+                first = pos; 
             }
 
             if (i == size - 1) {
-                last = pos;
+                last = pos; 
             } 
 
             if (node->left) {
-                q.push({node->left, pos * 2 + 1});
+                q.push({node->left, pos * 2});
             }
 
             if (node->right) {
-                q.push({node->right, pos * 2 + 2});
+                q.push({node->right, pos * 2 + 1});
             }
         }
         ans = max(ans, last - first + 1);
     }
     return ans;
-    }
-
+}
 
 
 
