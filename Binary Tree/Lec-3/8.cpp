@@ -17,7 +17,7 @@ struct Node {
 
 
 // Optimal O(n) and O(n)
-Node* buildTree(vector<int>& preorder, int& preIndex, int start, int end, map<int, int>& inMap) {
+Node* buildTree(vector<int>& preorder, int& preIndex, int start, int end, unordered_map<int, int>& inMap) {
     if (start > end) return NULL;
 
     int rootVal = preorder[preIndex++];
@@ -31,7 +31,7 @@ Node* buildTree(vector<int>& preorder, int& preIndex, int start, int end, map<in
 }
 
 Node* build(vector<int>& preorder, vector<int>& inorder) {
-    map<int, int> inMap;
+    unordered_map<int, int> inMap;
     for (int i = 0; i < inorder.size(); i++) {
         inMap[inorder[i]] = i;
     }
