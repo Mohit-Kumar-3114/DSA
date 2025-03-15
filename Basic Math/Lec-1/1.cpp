@@ -18,7 +18,7 @@ using namespace std;
 int main(){
     // cout is an object with insertion operator(<<) to print anything.
     cout<<"hello world";
-    // Return 0 indicates that the program has successfully executed.
+    // return 0 indicates that the program has successfully executed.
     return 0;
 }
 
