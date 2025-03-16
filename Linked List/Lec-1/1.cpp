@@ -15,10 +15,10 @@ class Node{
         data=data1;  // Initialize data with the provided value
         next=next1;  // Initialize next with the provided
     }
+
     Node (int data1){
         data=data1;  // Initialize data with the provided value
         next=nullptr;  // Initialize next as null since it's the end of the list
-
     }
 };
 
