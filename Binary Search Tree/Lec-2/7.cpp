@@ -20,13 +20,13 @@ struct Node {
 Node* lowestCommonAncestor(Node* root, Node* p, Node* q) {
     while (root) {
         if (root->val > p->val && root->val > q->val)
-            root = root->left;  // Move left if both p and q are smaller
+            root = root->left; // Move left if both p and q are smaller
 
         else if (root->val < p->val && root->val < q->val)
-            root = root->right;  // Move right if both p and q are greater
+            root = root->right; // Move right if both p and q are greater
 
         else
-            return root;  // Found the split point (LCA)
+            return root; // Found the split point (LCA)
     }
     return NULL;  
 }
