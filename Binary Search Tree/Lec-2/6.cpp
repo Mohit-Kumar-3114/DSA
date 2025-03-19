@@ -17,7 +17,7 @@ struct Node {
 
 
 // Optimal O(n) and O(h)
-bool isValidBST(Node* root,int minVal, int maxVal) {
+bool isValidBST(Node* root, long minVal, long maxVal) {
     if (root == NULL) return true;
     
     if (root->val >= maxVal || root->val <= minVal) return false;
@@ -36,7 +36,7 @@ int main() {
     root->left->right = new Node(40);
     root->right->left = new Node(60);
     root->right->right = new Node(80);
-    if (isValidBST(root, INT_MIN, INT_MAX))
+    if (isValidBST(root, LONG_MIN, LONG_MAX)) // to avoid overflow
         cout << "The tree is a BST" << endl;
     else
         cout << "The tree is not a BST" << endl;
