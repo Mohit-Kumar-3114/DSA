@@ -16,7 +16,48 @@ struct Node {
 
 
 
-// Brute 
+// Brute O(n) and O(h)
+void findSuccessor(Node* root, int& ans, int val){
+    if(!root) return;
+    findSuccessor(root->left,ans,val);
+    if(root->val>val and root->val<ans) ans=root->val;
+    findSuccessor(root->right,ans,val);
+}
+
+void findPredecessor(Node* root, int& ans, int val) {
+    if (!root) return;
+    findPredecessor(root->left, ans, val);  
+    if (root->val < val && root->val > ans) 
+        ans = root->val;
+    findPredecessor(root->right, ans, val); 
+}
+
+
+
+
+// Optimal O(log n) and O(1)
+void findSuccessor2(Node* root, int &ans, int val){
+    while (root) {
+        if (root->val > val) {
+            ans = root->val;
+            root = root->left;
+        } else {
+            root = root->right;
+        }
+    }
+}
+
+void findPredecessor2(Node* root, int &ans, int val) {
+    while (root) {
+        if (root->val < val) {  
+            ans = root->val;  
+            root = root->right;
+        } else {
+            root = root->left;
+        }
+    }
+}
+
 
 
 int main() {
@@ -29,5 +70,18 @@ int main() {
     root->right->right = new Node(9);
     root->left->right->left = new Node(3);
     root->left->right->right = new Node(5);
+    int successor=INT_MAX;
+    int val=8;
+    findSuccessor(root,successor,val);
+    cout<<"Successor from brute approach: "<<successor<<endl;
+    int successor2=INT_MAX;
+    findSuccessor2(root,successor2,val);
+    cout<<"Successor from optimal approach: "<<successor2<<endl;
+    int predecessor = INT_MIN;
+    findPredecessor(root, predecessor, val);
+    cout << "Predecessor from brute approach: " <<predecessor<<endl;
+    int predecessor2 = INT_MIN;
+    findPredecessor2(root, predecessor2, val);
+    cout << "Predecessor from optimal approach: " <<predecessor2<<endl;
     return 0;
 }
