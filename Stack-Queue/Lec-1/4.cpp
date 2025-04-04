@@ -19,49 +19,49 @@ public:
 
 
 
-// Optimal O(1) and O(no of elements in queue)
+// Optimal O(1) and O(no. of elements in queue)
 class Queue {
-    Node* front;
-    Node* rear;
+    Node* start;
+    Node* end;
     int current_size;
 public:
     Queue() {
-        front = NULL;
-        rear = NULL;
+        start = NULL;
+        end = NULL;
         current_size = 0;
     }
 
     void Push(int x) {
         Node* newNode = new Node(x);
         if (current_size == 0) {
-            front = newNode;
-            rear = newNode;
+            start = newNode;
+            end = newNode;
         } else {
-            rear->next = newNode;
-            rear = newNode;
+            end->next = newNode;
+            end = newNode;
         }
         current_size++;
     }
 
     int Pop() {
-        if (front == NULL) {
+        if (start == NULL) {
             cout << "Queue is empty" << endl;
             return -1;
         }
-        int popped = front->data;
-        Node* temp = front;
-        front = front->next;
+        int popped = start->data;
+        Node* temp = start;
+        start = start->next;
         current_size--;
         delete temp;
         return popped;
     }
 
     int Front() {
-        if (front == NULL) {
+        if (start == NULL) {
             cout << "Queue is empty" << endl;
             return -1;
         }
-        return front->data;
+        return start->data;
     }
 
     int Size() {

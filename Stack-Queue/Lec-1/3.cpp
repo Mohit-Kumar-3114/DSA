@@ -19,7 +19,7 @@ public:
 
 
 
-// Optimal O(1) and O(no of elements in stack)
+// Optimal O(1) and O(no. of elements in stack)
 class Stack {
     Node* head;
     int current_size;
