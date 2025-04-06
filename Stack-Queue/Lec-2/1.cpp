@@ -6,7 +6,7 @@ using namespace std;
 
 
 
-// Optimal O(2n) and O(n)
+// Optimal O(2n) and O(2n)
 int prec(char c) {
   if (c == '^')
     return 3;
